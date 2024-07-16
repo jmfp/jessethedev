@@ -1,6 +1,6 @@
 'use server'
 
-import { PrismaClient } from "@prisma/client"
+import { PrismaClient } from "@/prisma/generated/client"
 import { revalidatePath } from "next/cache"
 import { redirect } from "next/navigation"
 
@@ -29,8 +29,8 @@ export const addBlog = async (formData: any) => {
     redirect('/')
 }
 
-export const deleteBlog = async(id: any) =>{
-    prisma.post.delete({where: {id: id}})
+export const deleteBlog = async(slug: any) =>{
+    prisma.post.delete({where: {slug: slug}})
 }
 
 export const getAllPosts = async() => {
