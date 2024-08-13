@@ -25,7 +25,9 @@ export default function AddPost(){
         slug: z.string().min(1, {message: 'slug is required'}),
         description: z.string().min(2, {message: 'description is required'}),
         content: z.string().min(1, {message: 'content is required'}),
-        category: z.string().min(1, {message: 'category is required'})
+        category: z.string().min(1, {message: 'category is required'}),
+        previous: z.string(),
+        next: z.string()
     })
 
     const form = useForm<z.infer<typeof formSchema>>({
@@ -37,7 +39,9 @@ export default function AddPost(){
             slug: '',
             description: '',
             content: '',
-            category: ''
+            category: '',
+            previous: '',
+            next: ''
         }
     })
 
@@ -128,6 +132,32 @@ export default function AddPost(){
                         render={({field}) =>(
                             <FormItem>
                                 <FormLabel>Category</FormLabel>
+                                <FormControl>
+                                    <RichText description={field.name} onChange={field.onChange}/>
+                                </FormControl>
+                                <FormMessage/>
+                            </FormItem>
+                        )}
+                    />
+                    <FormField
+                        control={form.control}
+                        name="previous"
+                        render={({field}) =>(
+                            <FormItem>
+                                <FormLabel>Previous Article Slug</FormLabel>
+                                <FormControl>
+                                    <RichText description={field.name} onChange={field.onChange}/>
+                                </FormControl>
+                                <FormMessage/>
+                            </FormItem>
+                        )}
+                    />
+                    <FormField
+                        control={form.control}
+                        name="next"
+                        render={({field}) =>(
+                            <FormItem>
+                                <FormLabel>Next Article Slug</FormLabel>
                                 <FormControl>
                                     <RichText description={field.name} onChange={field.onChange}/>
                                 </FormControl>

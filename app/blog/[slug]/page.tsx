@@ -7,6 +7,8 @@ import rehypeHighlight from "rehype-highlight"
 import 'highlight.js/styles/base16/pop.css'
 import {PrismaClient} from "@/prisma/generated/client"
 import MarkdownArea from '@/app/components/markdown/MarkdownArea';
+import { Button } from '@/components/ui/button';
+import { redirect } from 'next/navigation';
 
 hljs.registerLanguage('typescript', typescript);
 
@@ -31,15 +33,7 @@ export default async function Article({params}:{params: {slug: string}}){
     let content = parse(post.content)
     return(
       <div className='display: flex h-full flex-col'>
-        <ParallaxHero image={post.image} height={"50"}/>
-        {/*<ParallaxImage 
-          image={post.image}
-          alt={post.slug}
-          width={1920}
-          height={500}
-          style="w-[100%] h-[600px] rounded-lg m-[auto] object-cover border-4 border-violet-600"
-          text=''
-        />*/}
+        <ParallaxHero image={post.image} height={50}/>
           <div className="w-[100vw] content-center flex-auto p-10 prose-h1:text-violet-500">
           <h1 className="text-3xl font-extrabold text-center">{post.title}</h1>
             <div className="mt-24 prose m-[auto] prose-violet prose-xl dark:prose-invert prose-h2:text-violet-500 prose-li:color-violet-500">
@@ -47,7 +41,22 @@ export default async function Article({params}:{params: {slug: string}}){
               <MarkdownArea content={post.content}>
               </MarkdownArea>
             </div>
-            
+            {!post.previous? <span/> :
+              <form action={async () =>{
+                'use server'
+                redirect(`redirect/${post.previous}`)
+              }}>
+                <Button type='submit'>Previous</Button>
+              </form>
+            }
+            {!post.next? <span/> :
+              <form action={async () =>{
+                'use server'
+                redirect(`redirect/${post.next}`)
+              }}>
+                <Button type='submit'>Next</Button>
+              </form>
+            }
         </div>
       </div>
     )

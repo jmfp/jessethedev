@@ -12,13 +12,14 @@ import {Parallax, ParallaxBanner} from 'react-scroll-parallax'
     )
 }*/}
 
-export async function ParallaxHero(props:{image: string, height: string, children?: ReactNode, style?: string}) {
+export async function ParallaxHero(props:{image: string, height: number, children?: ReactNode, style?: string}) {
     return(
         <div className={`h-full`}>
             <div
-            className={`relative h-0 pt-[30%] w-full bg-cover mb-3 bg-center bg-fixed bg-no-repeat`}
+            className={`relative h-0 w-full bg-cover mb-3 bg-center bg-fixed bg-no-repeat`}
             style={{
               backgroundImage: `url(${props.image})`,
+              paddingTop: `${props.height}%`
             }}
         >
             <div className={`${props.style}`}>
