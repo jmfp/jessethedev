@@ -6,9 +6,9 @@ export default function Projects() {
       <div className={styles.pageContainer}>
         <div className='grid grid-cols-1 md:grid-cols-2 mt-5 gap-5'>
           <Project 
-            image="/images/wheelsmall.png"
-            link="https://wagonwheelmadison.com/"
-            description="A website built for a local bar that allows for administrators to add upcoming events and users to order food online. Built using Wordpress."
+            image="/images/socialsite.png"
+            link="https://social-media-nextjs-ashy.vercel.app/"
+            description="A lightweight social media website built with Next.Js, Typescript, Tailwind, MongoDB and Prisma. Images are stored in Base64 on MongoDB then decoded with server actions. The whole site was built using only the server to practice SSR and server actions in Next.Js 14+. Uses a custom rolled authentication system."
           />
           <Project 
             image="/images/jtd.png"
@@ -27,6 +27,11 @@ export default function Projects() {
             link="https://pikaplay.onrender.com/"
             description="Pikaplay is a simple website that consumes the poké API that allows users to find information on each monster. Data includes a sprite image of the monster
             along with information on where to find the monster in each game. The website is built using React."
+          />
+          <Project 
+            image="/images/wheelsmall.png"
+            link="https://wagonwheelmadison.com/"
+            description="A website built for a local bar that allows for administrators to add upcoming events and users to order food online. Built using Wordpress."
           />
         </div>
       </div>
