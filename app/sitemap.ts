@@ -12,5 +12,6 @@ export default async function sitemap() {
     url: 'https://www.jessethedev.com',
     lastModified: new Date()
   },
-    ...post]
+    ...post
+]
 }
