@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.jessethedev.com"),
   keywords: ["jessie price", "jessethedev", "madison ohio software developer", "software", "madison ohio", "web developer", 
     "web developer madison ohio", "jesse price", "react", "reactjs", "react.js", "next", "next.js", "nextjs", "unity", "game development",
-    "unity engine", "javascript", "python", "c#", "html", "html5", "css", "css3", "tailwind"
+    "unity engine", "javascript", "python", "c#", "html", "html5", "css", "css3", "tailwind", "react-three", "react three", "react three fiber"
   ],
   title: {
     default: "JesseTheDev",
