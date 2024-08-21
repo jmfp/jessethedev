@@ -10,8 +10,19 @@ const inter = Inter({ subsets: ["latin"] });
 const nunito = Nunito({subsets: ["latin"]});
 
 export const metadata: Metadata = {
-  title: "JesseTheDev",
-  description: "Software Development",
+  metadataBase: new URL("https://www.jessethedev.com"),
+  keywords: ["jessie price", "jessethedev", "madison ohio software developer", "software", "madison ohio", "web developer", 
+    "web developer madison ohio", "jesse price", "react", "reactjs", "react.js", "next", "next.js", "nextjs", "unity", "game development",
+    "unity engine", "javascript", "python", "c#", "html", "html5", "css", "css3", "tailwind"
+  ],
+  title: {
+    default: "JesseTheDev",
+    template: "%s | JesseTheDev"
+  },
+  openGraph: {
+    description: "Learn Software Development In A Fun and Realistic Way"
+  }
+  //description: "Software Development",
 };
 
 export default function RootLayout({
