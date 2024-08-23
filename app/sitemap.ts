@@ -4,8 +4,8 @@ export default async function sitemap() {
   const posts = await getAllPosts()
   const post = posts?.map((post:any) =>{
     return{
-        url: `https://www.jessethedev.com/blog/${post.slug}`,
-        lastModified: post.updatedAt
+        url: `https://www.jessethedev.com/blog/${post?.slug}`,
+        lastModified: post?.updatedAt
     }
   })
   return[{

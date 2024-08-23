@@ -4,10 +4,10 @@ import { redirect } from 'next/navigation'
 
 export async function middleware(request: NextRequest) {
   var session = await getSession()
+  await updateSession(request)
   if(!session){
     return NextResponse.redirect(new URL('/admin/login', request.url))
   }
-  //return await updateSession(request)
 }
 
 export const config = {

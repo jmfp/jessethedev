@@ -2,6 +2,7 @@ import { cookies } from "next/headers";
 import { NextResponse, NextRequest } from "next/server";
 import { SignJWT, jwtVerify } from "jose";
 import { redirect } from "next/navigation";
+import { validateUser } from "@/actions/actions";
 
 const secretKey = process.env.JWT_SECRET;
 const key = new TextEncoder().encode(secretKey);
@@ -25,16 +26,27 @@ export async function encrypt(payload: any) {
     //const newUser = await global.prismadb.post
   }
 
-export async function login(formData: FormData){
+  export async function login(formData: FormData){
     //verify credentials and get user
-    const user = {email: formData.get('email')};
-
-    //create the session
-    const expires = new Date(Date.now() + 3600 * 1000)
-    const session = await encrypt({user, expires})
-
-    //save the session in a cookie
-    cookies().set('session', session, {expires, httpOnly: true});
+    const user = {email: formData.get('email'), password: formData.get('password')};
+    const valid = await validateUser(user)
+    try {
+      if(valid){
+        //create the session
+        const expires = new Date(Date.now() + 3600 * 1000)
+        const session = await encrypt({user, expires})
+  
+        //save the session in a cookie
+        cookies().set('session', session, {expires, httpOnly: true});
+        //NextResponse.redirect("/")
+      }
+      
+    } catch (error: any) {
+      console.log(error)
+    }
+    if(valid){
+      redirect("/")
+    }
 }
 
 export async function logout(){
@@ -54,7 +66,7 @@ export async function updateSession(request: NextRequest) {
   
     // Refresh the session so it doesn't expire
     const parsed = await decrypt(session);
-    parsed.expires = new Date(Date.now() + 3600 * 1000);
+    parsed.expires = new Date(Date.now() + 4 * 60 * 60);
     const res = NextResponse.next();
     res.cookies.set({
       name: "session",

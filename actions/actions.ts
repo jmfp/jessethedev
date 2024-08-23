@@ -6,6 +6,19 @@ import { redirect } from "next/navigation"
 
 const prisma = new PrismaClient()
 
+export async function validateUser(user: any){
+    try {
+        const res = await prisma.user.findUnique({where:{email:user.email}})
+        if (res && user.password === res.password){
+            console.log(res)
+            return (true)
+        }
+    } catch (error: any) {
+        console.log(error.message)
+    }
+    return false
+}
+
 export const addBlog = async (formData: any) => {
     const title = formData["title"]
     const image = formData["image"]
