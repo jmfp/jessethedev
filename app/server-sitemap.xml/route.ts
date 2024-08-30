@@ -5,15 +5,20 @@ import { getServerSideSitemap } from 'next-sitemap'
 export async function GET(request: Request) {
   // Method to source urls from cms
   const urls = await getAllPosts()
-  console.log(urls)
-  for(let i = 0; i <= urls.length; i++){
-    return getServerSideSitemap([
-      {
-        loc: `https://JesseTheDev.com/blog/${urls[i].slug}`,
-        lastmod: urls[i].updatedAt.toISOString(),
-        // changefreq
-        // priority
-      }
-    ])
-  }
+
+  const post = urls?.map((post:any) =>{
+    return{
+        loc: `https://www.jessethedev.com/blog/${post?.slug}`,
+        lastmod: post?.updatedAt.toISOString()
+    }
+  })
+  return getServerSideSitemap([
+    {
+      loc: `https://JesseTheDev.com`,
+      lastmod: new Date().toISOString(),
+      // changefreq
+      // priority
+    },
+    ...post
+  ])
 }
