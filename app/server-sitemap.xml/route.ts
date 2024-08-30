@@ -1,4 +1,3 @@
-// app/server-sitemap.xml/route.ts
 import { getAllPosts } from '@/actions/actions'
 import { getServerSideSitemap } from 'next-sitemap'
 

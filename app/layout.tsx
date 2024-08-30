@@ -5,6 +5,8 @@ import Navigation from "./components/navigation/navbar/Navbar"
 import {ThemeProvider} from './components/theme-provider'
 import { Providers } from "../app/blog/[slug]/providers";
 
+import { GoogleAnalytics } from '@next/third-parties/google'
+
 
 const inter = Inter({ subsets: ["latin"] });
 const nunito = Nunito({subsets: ["latin"]});
@@ -50,6 +52,7 @@ export default function RootLayout({
           </Providers>
         </ThemeProvider>
       </body>
+      <GoogleAnalytics gaId="G-ZJMTS01ZQZ" />
     </html>
   );
 }
