@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Email from "../components/forms/contact";
 import { ParallaxHero, ParallaxVideo } from "../components/images/image";
 
@@ -41,6 +42,10 @@ export default function Services() {
             {"I have over 10 years of experience in the field with a Bachelors degree in computer science. I like to take a laid back approach to communication, and a focused approach to work. "}
           </p>
         </div>
+        <Image src={"/images/respsolialsite.png"}
+          width={200}
+          height={200}
+          alt="socialsite"/>
         {/*<ParallaxHero image="/images/respsocialsite.png" height={40}/>
         <ParallaxHero image="/images/respwheel.png" height={40}/>*/}
         <div className="m-16 text-center text-3xl">
