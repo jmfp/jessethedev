@@ -30,3 +30,13 @@ export async function ParallaxHero(props:{image: string, height: number, childre
         </div>
     )
 }
+
+export async function ParallaxVideo(props: {text?: string}) {
+    return(
+        <div className={`h-full`}>
+            <video src={require("../../code.mp4")} autoPlay muted loop>
+
+            </video>
+        </div>
+    )
+}

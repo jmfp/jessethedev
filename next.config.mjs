@@ -1,4 +1,5 @@
 /** @type {import('next').NextConfig} */
+import withVideos from "next-videos";
 import path from 'path';
 import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url); // get the resolved path to the file
@@ -13,4 +14,7 @@ const nextConfig = {
     reactStrictMode: false,
 };
 
-export default nextConfig;
+export default {
+    ...nextConfig,
+    ...withVideos(),
+};
