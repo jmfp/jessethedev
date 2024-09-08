@@ -42,7 +42,7 @@ export default function Services() {
             {"I have over 10 years of experience in the field with a Bachelors degree in computer science. I like to take a laid back approach to communication, and a focused approach to work. "}
           </p>
         </div>
-        <Image src={"/images/respsolialsite.png"}
+        <Image src={"/images/respsocialsite.png"}
           width={200}
           height={200}
           alt="socialsite"/>
