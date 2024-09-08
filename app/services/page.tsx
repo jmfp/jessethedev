@@ -43,22 +43,27 @@ export default function Services() {
           </p>
         </div>
         <Image src={"/images/respsocialsite.png"}
-          width={500}
-          height={500}
+          width={800}
+          height={800}
           alt="socialsite" className="m-auto"/>
         {/*<ParallaxHero image="/images/respsocialsite.png" height={40}/>
         <ParallaxHero image="/images/respwheel.png" height={40}/>*/}
         <div className="m-16 text-center text-3xl">
         <p>{"I like to overdeliver and produce results that both parties can be proud of. With a focus on solving clients individual needs for each project, I enjoy creating a platform that will make you proud to share your content, services or products."}</p>
         </div>
-        
+        <Image src={"/images/respsolo.png"}
+          width={800}
+          height={800}
+          alt="socialsite" className="m-auto"/>
         {/*<ParallaxHero image="/images/respsolo.png" height={40}/>
         <ParallaxHero image="/images/resppoke.png" height={40}/>*/}
         <div className="m-16 text-center text-3xl">
         <p>{"Offering backend, frontend, or fullstack custom services I am confident I have the ability to increase your businesses presence on the internet in whatever way you need."}</p>
         </div>
-        
-        
+        <Image src={"/images/respwheel.png"}
+          width={800}
+          height={800}
+          alt="socialsite" className="m-auto"/>
         <h2 className="m-auto text-primary text-3xl">Contact Me</h2>
       </div>
         <Email/>
