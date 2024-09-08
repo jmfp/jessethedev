@@ -10,6 +10,7 @@ export default function Services() {
         {/*<div className="max-sm: hidden">
         <ParallaxVideo text={"JesseTheDev"}/>
         </div>*/}
+          <ParallaxHero image="/images/me.png" height={40}/>
         <div className="m-16">
           <h2 className="m-auto text-primary text-3xl">Why Me?</h2>
           <p className="m-auto text-3xl">
@@ -27,9 +28,8 @@ export default function Services() {
         <div className="m-16 text-center text-3xl">
         <p>{"Offering backend, frontend, or fullstack custom services I am confident I have the ability to increase your businesses presence on the internet in whatever way you need."}</p>
         </div>
-        
-        
-        <h2 className="m-auto text-primary text-3xl">Contact Me</h2>
+        <ParallaxHero image="/images/me2.png" height={40}/>
+        <h2 className="m-auto text-primary text-3xl mt-6">Contact Me</h2>
       </div>
       <div className="md:hidden lg:hidden">
       <h2 className="m-auto text-primary text-3xl">Web Design Services In Madison and Northeast Ohio</h2>

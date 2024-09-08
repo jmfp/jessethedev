@@ -1,55 +1,72 @@
-import Link from "next/link";
 import Image from "next/image";
-import styles from "./sass/components/Container.module.scss"
-import { blogCard } from "./lib/interface";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import parse from 'html-react-parser';
-import {PrismaClient} from "@/prisma/generated/client"
+import Email from "./components/forms/contact";
+import { ParallaxHero, ParallaxVideo } from "./components/images/image";
 
-export const revalidate = 30
-
-//design interface for post return
-export interface post{
-  title: string,
-  image: string,
-  slug: string,
-  description: string,
-  content: string
-}
-
-//prisma client
-const prisma = new PrismaClient()
-
-export default async function Home() {
-  //const posts = await fetchPosts()
-  const posts = await prisma.post.findMany({})
-  //const test = await newView()
-
+export default function Services() {
   return (
-      <div className='display: flex w-[100%] justify-center mb-14'>
-        <div className='grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 mt-5 gap-5 content-center'>
-          {posts.length ? posts.map((post: any, idx: number) =>(
-            <Card key={idx} className='m-[auto] max-w-[400px] max-h-[550px]'>
-              <Image 
-                src={post.image} 
-                alt={post.slug} 
-                width={200} 
-                height={200}
-                className="rounded-t-lg h-[300px] w-[100%] object-cover"
-              />
-              <CardContent className="mt-5 text-center">
-                <h3 className="text-xl line-clamp-1 font-bold">{post.title}</h3>
-                <div className="line-clamp-2 text-sm text-violet-500 mt-5">
-                  {parse(post.description)}
-                </div>
-              </CardContent>
-              <Button asChild className="w-[50%] mt-7 mb-7 ml-[25%]">
-                <Link href={`/blog/${post.slug}`}>Read More</Link>
-              </Button>
-            </Card>
-          )) : <span/>}
+    <div className="display: flex flex-col text-center">
+      <div className="max-sm:hidden">
+        <h2 className="m-auto text-primary text-3xl">Web Design Services In Madison and Northeast Ohio</h2>
+        {/*<div className="max-sm: hidden">
+        <ParallaxVideo text={"JesseTheDev"}/>
+        </div>*/}
+          <ParallaxHero image="/images/me.png" height={40}/>
+        <div className="m-16">
+          <h2 className="m-auto text-primary text-3xl">Why Me?</h2>
+          <p className="m-auto text-3xl">
+            {"I have over 10 years of experience in the field with a Bachelors degree in computer science. I like to take a laid back approach to communication, and a focused approach to work. "}
+          </p>
         </div>
+        <ParallaxHero image="/images/respsocialsite.png" height={40}/>
+        <ParallaxHero image="/images/respwheel.png" height={40}/>
+        <div className="m-16 text-center text-3xl">
+        <p>{"I like to overdeliver and produce results that both parties can be proud of. With a focus on solving clients individual needs for each project, I enjoy creating a platform that will make you proud to share your content, services or products."}</p>
+        </div>
+        
+        <ParallaxHero image="/images/respsolo.png" height={40}/>
+        <ParallaxHero image="/images/resppoke.png" height={40}/>
+        <div className="m-16 text-center text-3xl">
+        <p>{"Offering backend, frontend, or fullstack custom services I am confident I have the ability to increase your businesses presence on the internet in whatever way you need."}</p>
+        </div>
+        <ParallaxHero image="/images/me2.png" height={40}/>
+        <h2 className="m-auto text-primary text-3xl mt-6">Contact Me</h2>
       </div>
-  );
+      <div className="md:hidden lg:hidden">
+      <h2 className="m-auto text-primary text-3xl">Web Design Services In Madison and Northeast Ohio</h2>
+        {/*<div className="max-sm: hidden">
+        <ParallaxVideo text={"JesseTheDev"}/>
+        </div>*/}
+        <div className="m-16">
+          <h2 className="m-auto text-primary text-3xl">Why Me?</h2>
+          <p className="m-auto text-3xl">
+            {"I have over 10 years of experience in the field with a Bachelors degree in computer science. I like to take a laid back approach to communication, and a focused approach to work. "}
+          </p>
+        </div>
+        <Image src={"/images/respsocialsite.png"}
+          width={800}
+          height={800}
+          alt="socialsite" className="m-auto"/>
+        {/*<ParallaxHero image="/images/respsocialsite.png" height={40}/>
+        <ParallaxHero image="/images/respwheel.png" height={40}/>*/}
+        <div className="m-16 text-center text-3xl">
+        <p>{"I like to overdeliver and produce results that both parties can be proud of. With a focus on solving clients individual needs for each project, I enjoy creating a platform that will make you proud to share your content, services or products."}</p>
+        </div>
+        <Image src={"/images/respsolo.png"}
+          width={800}
+          height={800}
+          alt="socialsite" className="m-auto"/>
+        {/*<ParallaxHero image="/images/respsolo.png" height={40}/>
+        <ParallaxHero image="/images/resppoke.png" height={40}/>*/}
+        <div className="m-16 text-center text-3xl">
+        <p>{"Offering backend, frontend, or fullstack custom services I am confident I have the ability to increase your businesses presence on the internet in whatever way you need."}</p>
+        </div>
+        <Image src={"/images/respwheel.png"}
+          width={800}
+          height={800}
+          alt="socialsite" className="m-auto"/>
+        <h2 className="m-auto text-primary text-3xl">Contact Me</h2>
+      </div>
+        <Email/>
+    </div>
+  )
 }

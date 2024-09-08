@@ -24,7 +24,7 @@ const NavBar = () =>{
 function SocialLinks(){
   return(
     <div className="flex items-center gap-2">
-      {/*<Link href="/projects">Projects</Link>*/}
+      <Link href="/blog">Blog</Link>
       <Link
         href="https://github.com/jmfp"
         target="_blank"
