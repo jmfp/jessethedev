@@ -3,8 +3,12 @@
 import { PrismaClient } from "@/prisma/generated/client"
 import { revalidatePath } from "next/cache"
 import { redirect } from "next/navigation"
+import Mail from 'nodemailer/lib/mailer'
+import nodemailer from 'nodemailer';
 
 const prisma = new PrismaClient()
+
+//email settings
 
 export async function validateUser(user: any){
     try {
@@ -17,6 +21,39 @@ export async function validateUser(user: any){
         console.log(error.message)
     }
     return false
+}
+
+export async function sendEmail(formData: any){
+  const name = formData["firstName"]
+  const lastName = formData["lastName"]
+  const message = formData["message"]
+  const email = formData["email"]
+  const transport = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+        user: process.env.MY_EMAIL,
+        pass: process.env.MY_PASSWORD,
+      },
+  });
+  const mailOptions: Mail.Options = {
+    from: process.env.MY_EMAIL,
+    to: process.env.MY_EMAIL,
+    // cc: email, (uncomment this line if you want to send a copy to the sender)
+    subject: `Message from ${name} ${lastName} (${email})`,
+    text: message,
+  };
+  const sendMailPromise = () =>
+    new Promise<string>((resolve, reject) => {
+      transport.sendMail(mailOptions, function (err) {
+        if (!err) {
+          resolve('Email sent');
+        } else {
+          reject(err.message);
+        }
+      });
+    });
+
+  await sendMailPromise()
 }
 
 export const addBlog = async (formData: any) => {
