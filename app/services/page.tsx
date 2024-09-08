@@ -43,8 +43,8 @@ export default function Services() {
           </p>
         </div>
         <Image src={"/images/respsocialsite.png"}
-          width={300}
-          height={300}
+          width={500}
+          height={500}
           alt="socialsite" className="m-auto"/>
         {/*<ParallaxHero image="/images/respsocialsite.png" height={40}/>
         <ParallaxHero image="/images/respwheel.png" height={40}/>*/}
