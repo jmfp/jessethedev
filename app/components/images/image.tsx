@@ -16,7 +16,7 @@ export async function ParallaxHero(props:{image: string, height: number, childre
     return(
         <div className={`h-full`}>
             <div
-            className={`relative h-0 w-full bg-cover mb-3 bg-center bg-fixed bg-no-repeat`}
+            className={`relative h-0 w-full bg-cover mb-3 bg-center bg-fixed bg-no-repeat sm:bg-fixed sm:bg-contain`}
             style={{
               backgroundImage: `url(${props.image})`,
               paddingTop: `${props.height}%`
