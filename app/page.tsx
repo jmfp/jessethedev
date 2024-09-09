@@ -10,7 +10,7 @@ export default function Services() {
         {/*<div className="max-sm: hidden">
         <ParallaxVideo text={"JesseTheDev"}/>
         </div>*/}
-          <ParallaxHero image="/images/me.png" height={40}/>
+          <ParallaxHero image="/images/mecopy.webp" height={40}/>
         <div className="m-16">
           <h2 className="m-auto text-primary text-3xl">Why Me?</h2>
           <p className="m-auto text-3xl">
