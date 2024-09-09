@@ -2,8 +2,6 @@ import parse from 'html-react-parser';
 import hljs from 'highlight.js/lib/core';
 import typescript from 'highlight.js/lib/languages/typescript';
 import { ParallaxHero } from "@/app/components/images/image";
-import Markdown from "react-markdown"
-import rehypeHighlight from "rehype-highlight"
 import 'highlight.js/styles/base16/pop.css'
 import {PrismaClient} from "@/prisma/generated/client"
 import MarkdownArea from '@/app/components/markdown/MarkdownArea';
@@ -17,7 +15,7 @@ export const revalidate = 30
 const prisma = new PrismaClient()
 
 export const metadata : Metadata = {
-  
+
 }
 
 //fetch posts from mongodb

@@ -1,7 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import styles from "./sass/components/Container.module.scss"
-import { blogCard } from "../lib/interface";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import parse from 'html-react-parser';
