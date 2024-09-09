@@ -9,11 +9,16 @@ import {PrismaClient} from "@/prisma/generated/client"
 import MarkdownArea from '@/app/components/markdown/MarkdownArea';
 import { Button } from '@/components/ui/button';
 import { redirect } from 'next/navigation';
+import { Metadata } from 'next';
 
 hljs.registerLanguage('typescript', typescript);
 
 export const revalidate = 30
 const prisma = new PrismaClient()
+
+export const metadata : Metadata = {
+  
+}
 
 //fetch posts from mongodb
 async function fetchPosts(slug: string){
