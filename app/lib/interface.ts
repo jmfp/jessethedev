@@ -19,3 +19,10 @@ export interface blogPost{
     slug: string,
     content: string
 }
+
+export interface serviceInfo{
+    title: string,
+    icon: string,
+    description: string,
+    destination: string
+}

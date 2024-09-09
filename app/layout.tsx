@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     template: "%s | JesseTheDev"
   },
   openGraph: {
-    description: "Learn Software Development In A Fun and Realistic Way"
+    description: "Web Design Services in Madison Ohio."
   }
   //description: "Software Development",
 };

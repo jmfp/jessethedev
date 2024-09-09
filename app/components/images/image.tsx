@@ -1,6 +1,5 @@
 
 import { ReactNode } from "react";
-import {Parallax, ParallaxBanner} from 'react-scroll-parallax'
 
 {/*export default function ParallaxImage(props: {image: string, alt:string, width:number, height:number, style:string, text:string}){
     return(
@@ -12,18 +11,42 @@ import {Parallax, ParallaxBanner} from 'react-scroll-parallax'
     )
 }*/}
 
-export async function ParallaxHero(props:{image: string, height: number, children?: ReactNode, style?: string}) {
+export async function ParallaxHero(props:{image: string, height: number, text?: string, children?: ReactNode, style?: string}) {
     return(
         <div className={`h-full`}>
             <div
-            className={`relative h-0 w-full bg-cover bg-center bg-fixed bg-no-repeat max-sm:bg-contain`}
+            className={`w-full bg-cover bg-center bg-fixed bg-no-repeat max-sm:bg-contain`}
             style={{
               backgroundImage: `url(${props.image})`,
               paddingTop: `${props.height}%`
             }}
         >
-            <div className={`${props.style}`}>
-                {props.children}
+            <div className='display: flex m-auto'>
+                <p className="m-auto">{props.text}</p>
+                <div className="m-auto">
+                    {props.children}
+                </div>
+            </div>
+        </div>
+            
+        </div>
+    )
+}
+
+export async function ParallaxHeroContainer(props:{image: string, height: number, text?: string, children?: ReactNode, style?: string}) {
+    return(
+        <div className={`h-full`}>
+            <div
+            className={`w-full bg-cover bg-center bg-fixed bg-no-repeat max-sm:bg-contain`}
+            style={{
+              backgroundImage: `url(${props.image})`
+            }}
+        >
+            <div className='display: flex m-auto h-full'>
+                <p className="m-auto">{props.text}</p>
+                <div className="m-auto my-24">
+                    {props.children}
+                </div>
             </div>
         </div>
             

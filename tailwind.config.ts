@@ -52,6 +52,9 @@ const config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        animation: {
+          "bounce-slow": "bounce 4s infinite"
+        }
       },
       borderRadius: {
         lg: "var(--radius)",
