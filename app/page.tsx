@@ -44,12 +44,15 @@ export default function Services() {
         <h2 className="m-auto text-primary text-3xl mt-6">Contact Me</h2>
       </div>
       <div className="md:hidden lg:hidden">
-        <Image 
-          src={"/images/hero.webp"}
-          alt="Web design madison ohio"
-          width={200}
-          height={200}
-        />
+        <div className="w-full">
+          <Image 
+            src={"/images/hero.webp"}
+            alt="Web design madison ohio"
+            width={250}
+            height={250}
+            className="w-full"
+          />
+        </div>
         <div className="m-16">
         <h1 className="m-auto text-primary text-3xl">Web Design Services In Madison and Northeast Ohio</h1>
           <p className="m-auto text-3xl">
@@ -57,23 +60,23 @@ export default function Services() {
           </p>
         </div>
         <Image src={"/images/social.webp"}
-          width={200}
-          height={200}
-          alt="socialsite" className="m-auto scale-150"/>
+          width={300}
+          height={300}
+          alt="socialsite" className="m-auto scale-150 overflow-hidden"/>
         <div className="m-16 text-center text-3xl">
         <p>{"I like to overdeliver and produce results that both parties can be proud of. With a focus on solving clients individual needs for each project, I enjoy creating a platform that will make you proud to share your content, services or products."}</p>
         </div>
         <Image src={"/images/solo.webp"}
-          width={200}
-          height={200}
-          alt="socialsite" className="m-auto scale-150"/>
+          width={300}
+          height={300}
+          alt="socialsite" className="m-auto scale-150 overflow-hidden"/>
         <div className="m-16 text-center text-3xl">
         <p>{"Offering backend, frontend, or fullstack custom services I am confident I have the ability to increase your businesses presence on the internet in whatever way you need."}</p>
         </div>
         <Image src={"/images/wheel.webp"}
-          width={200}
-          height={200}
-          alt="socialsite" className="m-auto scale-150"/>
+          width={300}
+          height={300}
+          alt="socialsite" className="m-auto scale-150 overflow-hidden"/>
         <h2 className="m-auto text-primary text-3xl">Contact Me</h2>
       </div>
         <Email/>
