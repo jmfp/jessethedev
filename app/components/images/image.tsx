@@ -43,7 +43,7 @@ export async function ParallaxHeroContainer(props:{image: string, height: number
             }}
         >
             <div className='display: flex m-auto h-full'>
-                <p className="m-auto">{props.text}</p>
+                <p className="m-auto text-4xl">{props.text}</p>
                 <div className="m-auto my-24">
                     {props.children}
                 </div>

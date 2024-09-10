@@ -21,11 +21,8 @@ export default function Services() {
     <div className="display: flex flex-col text-center">
       <div className="max-sm:hidden">
         <h2 className="m-auto text-primary text-3xl">Web Design Services In Madison and Northeast Ohio</h2>
-        {/*<div className="max-sm: hidden">
-        <ParallaxVideo text={"JesseTheDev"}/>
-        </div>*/}
           <ParallaxHeroContainer image="/images/hero.webp" height={40} text="Hi I'm Jesse Price And I Design Websites.">
-            <Image src={"/images/header-img.svg"} alt="Web Design Madison Ohio" width={400} height={400} className="animation-bounce-slow"/>
+            <Image src={"/images/header-img.svg"} alt="Web Design Madison Ohio" width={400} height={400} className="animate-bounce-slow"/>
           </ParallaxHeroContainer>
         <div className="m-16">
           <h2 className="m-auto text-primary text-3xl">Why Me?</h2>
@@ -49,9 +46,6 @@ export default function Services() {
       </div>
       <div className="md:hidden lg:hidden">
       <h2 className="m-auto text-primary text-3xl">Web Design Services In Madison and Northeast Ohio</h2>
-        {/*<div className="max-sm: hidden">
-        <ParallaxVideo text={"JesseTheDev"}/>
-        </div>*/}
         <div className="m-16">
           <h2 className="m-auto text-primary text-3xl">Why Me?</h2>
           <p className="m-auto text-3xl">
@@ -62,8 +56,6 @@ export default function Services() {
           width={800}
           height={800}
           alt="socialsite" className="m-auto scale-150"/>
-        {/*<ParallaxHero image="/images/respsocialsite.png" height={40}/>
-        <ParallaxHero image="/images/respwheel.png" height={40}/>*/}
         <div className="m-16 text-center text-3xl">
         <p>{"I like to overdeliver and produce results that both parties can be proud of. With a focus on solving clients individual needs for each project, I enjoy creating a platform that will make you proud to share your content, services or products."}</p>
         </div>
@@ -71,8 +63,6 @@ export default function Services() {
           width={800}
           height={800}
           alt="socialsite" className="m-auto scale-150"/>
-        {/*<ParallaxHero image="/images/respsolo.png" height={40}/>
-        <ParallaxHero image="/images/resppoke.png" height={40}/>*/}
         <div className="m-16 text-center text-3xl">
         <p>{"Offering backend, frontend, or fullstack custom services I am confident I have the ability to increase your businesses presence on the internet in whatever way you need."}</p>
         </div>

@@ -52,9 +52,6 @@ const config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        animation: {
-          "bounce-slow": "bounce 4s infinite"
-        }
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -70,10 +67,14 @@ const config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        "float-y":{
+          "0%, 100%": {transform: "translate(-26px)"}
+        }
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "bounce-slow": "bounce 16s linear infinite"
       },
     },
   },
