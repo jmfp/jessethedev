@@ -23,11 +23,12 @@ export async function validateUser(user: any){
     return false
 }
 
-export async function sendEmail(formData: any){
-  const name = formData["firstName"]
-  const lastName = formData["lastName"]
-  const message = formData["message"]
-  const email = formData["email"]
+export async function sendEmail(formData: FormData){
+  const name = formData.get("firstName")
+  const lastName = formData.get("lastName")
+  const message = formData.get("message")
+  const email = formData.get("email")
+  console.log(name)
   const transport = nodemailer.createTransport({
       service: 'gmail',
       auth: {
@@ -54,6 +55,7 @@ export async function sendEmail(formData: any){
     });
 
   await sendMailPromise()
+  revalidatePath("/")
 }
 
 export const addBlog = async (formData: any) => {

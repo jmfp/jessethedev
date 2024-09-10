@@ -6,8 +6,7 @@ export default function Email() {
     <div className="lg:mx-32 max-sm:mx-6 m-auto mb-12 mt-12">
         <form action={async (formData: FormData) => {
             'use server'
-            console.log(formData)
-            //await sendEmail(formData)
+            await sendEmail(formData)
         }} className="display: flex flex-col gap-2">
             <input className="h-[50px] rounded-lg p-4 hover:border hover:border-primary" name="firstName" placeholder="First Name"/>
             <input className="h-[50px] rounded-lg p-4 hover:border hover:border-primary" name="lastName" placeholder="Last Name"/>

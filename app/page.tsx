@@ -20,12 +20,11 @@ export default function Services() {
   return (
     <div className="display: flex flex-col text-center">
       <div className="max-sm:hidden">
-        <h2 className="m-auto text-primary text-3xl">Web Design Services In Madison and Northeast Ohio</h2>
           <ParallaxHeroContainer image="/images/hero.webp" height={40} text="Hi I'm Jesse Price And I Design Websites.">
             <Image src={"/images/header-img.svg"} alt="Web Design Madison Ohio" width={400} height={400} className="animate-bounce-slow"/>
           </ParallaxHeroContainer>
         <div className="m-16">
-          <h2 className="m-auto text-primary text-3xl">Why Me?</h2>
+        <h1 className="m-auto text-primary text-3xl">Web Design Services In Madison and Northeast Ohio</h1>
           <p className="m-auto text-3xl">
             {"I have over 10 years of experience in the field with a Bachelors degree in computer science. I like to take a laid back approach to communication, and a focused approach to work. "}
           </p>
