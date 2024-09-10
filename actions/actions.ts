@@ -24,38 +24,44 @@ export async function validateUser(user: any){
 }
 
 export async function sendEmail(formData: any){
-  const name = formData.get("firstName")
-  const lastName = formData.get("lastName")
-  const message = formData.get("message")
-  const email = formData.get("email")
-  console.log(name)
-  const transport = nodemailer.createTransport({
-      service: 'gmail',
-      auth: {
-        user: process.env.MY_EMAIL,
-        pass: process.env.MY_PASSWORD,
-      },
-  });
-  const mailOptions: Mail.Options = {
-    from: process.env.MY_EMAIL,
-    to: process.env.MY_EMAIL,
-    // cc: email, (uncomment this line if you want to send a copy to the sender)
-    subject: `Message from ${name} ${lastName} (${email})`,
-    text: message,
-  };
-  const sendMailPromise = () =>
-    new Promise<string>((resolve, reject) => {
-      transport.sendMail(mailOptions, function (err) {
-        if (!err) {
-          resolve('Email sent');
-        } else {
-          reject(err.message);
-        }
-      });
-    });
+    try {
+        const name = formData.get("firstName")
+        const lastName = formData.get("lastName")
+        const message = formData.get("message")
+        const email = formData.get("email")
+        console.log(name)
+        const transport = nodemailer.createTransport({
+            service: 'gmail',
+            auth: {
+              user: process.env.MY_EMAIL,
+              pass: process.env.MY_PASSWORD,
+            },
+        });
+        const mailOptions: Mail.Options = {
+          from: process.env.MY_EMAIL,
+          to: process.env.MY_EMAIL,
+          // cc: email, (uncomment this line if you want to send a copy to the sender)
+          subject: `Message from ${name} ${lastName} (${email})`,
+          text: message,
+        };
+        const sendMailPromise = () =>
+          new Promise<string>((resolve, reject) => {
+            transport.sendMail(mailOptions, function (err) {
+              if (!err) {
+                resolve('Email sent');
+              } else {
+                reject(err.message);
+              }
+            });
+          });
 
-  await sendMailPromise()
-  revalidatePath("/")
+        revalidatePath("/")
+      
+        await sendMailPromise()
+        redirect("/")
+    } catch (error: any) {
+        console.log(error)
+    }
 }
 
 export const addBlog = async (formData: any) => {
