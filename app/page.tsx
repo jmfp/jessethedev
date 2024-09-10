@@ -60,22 +60,22 @@ export default function Services() {
           </p>
         </div>
         <Image src={"/images/social.webp"}
-          width={300}
-          height={300}
+          width={400}
+          height={400}
           alt="socialsite" className="m-auto scale-150 overflow-hidden"/>
         <div className="m-16 text-center text-3xl">
         <p>{"I like to overdeliver and produce results that both parties can be proud of. With a focus on solving clients individual needs for each project, I enjoy creating a platform that will make you proud to share your content, services or products."}</p>
         </div>
         <Image src={"/images/solo.webp"}
-          width={300}
-          height={300}
+          width={400}
+          height={400}
           alt="socialsite" className="m-auto scale-150 overflow-hidden"/>
         <div className="m-16 text-center text-3xl">
         <p>{"Offering backend, frontend, or fullstack custom services I am confident I have the ability to increase your businesses presence on the internet in whatever way you need."}</p>
         </div>
         <Image src={"/images/wheel.webp"}
-          width={300}
-          height={300}
+          width={400}
+          height={400}
           alt="socialsite" className="m-auto scale-150 overflow-hidden"/>
         <h2 className="m-auto text-primary text-3xl">Contact Me</h2>
       </div>
