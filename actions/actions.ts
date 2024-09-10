@@ -23,7 +23,7 @@ export async function validateUser(user: any){
     return false
 }
 
-export async function sendEmail(formData: FormData){
+export async function sendEmail(formData: any){
   const name = formData.get("firstName")
   const lastName = formData.get("lastName")
   const message = formData.get("message")
