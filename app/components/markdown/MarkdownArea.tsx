@@ -5,7 +5,7 @@ import rehypeHighlight from "rehype-highlight"
 import { cn } from "@/lib/utils"
 import 'highlight.js/styles/base16/pop.css'
 import { PiTerminalThin } from "react-icons/pi"
-import Copybutton from "../button/Button"
+import {Copybutton} from "../button/Button"
 import { icons } from "@/app/lib/languageicons"
 
 export default function MarkdownArea({content, children, className}:{content:string, children?:any, className?:string}) {
