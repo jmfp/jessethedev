@@ -33,8 +33,13 @@ export default function Services() {
         <ParallaxHero image="/images/social.webp" height={40}/>
         <ParallaxHero image="/images/wheel.webp" height={40}/>
         <div className="m-16 text-center text-3xl">
-        <p>{"I like to overdeliver and produce results that both parties can be proud of. With a focus on solving clients individual needs for each project, I enjoy creating a platform that will make you proud to share your content, services or products."}</p>
-        <LitContainer/>
+        <p className="my-4">{"I like to overdeliver and produce results that both parties can be proud of. With a focus on solving clients individual needs for each project, I enjoy creating a platform that will make you proud to share your content, services or products."}</p>
+        <LitContainer>
+          <div className="flex flex-col items-center text-center m-auto p-12">
+            <h2 className="text-primary text-3xl mb-6">Read My Blog</h2>
+            <p>My blog contains some of the knowledge I've used to build web applications and websites that scale. Also, it's pretty fun 😊</p>
+          </div>
+        </LitContainer>
         </div>
         
         <ParallaxHero image="/images/solo.webp" height={40}/>
@@ -80,9 +85,11 @@ export default function Services() {
           alt="socialsite" className="m-auto scale-150 overflow-hidden"/>
         <h2 className="m-auto text-primary text-3xl">Contact Me</h2>
       </div>
-      <LitContainer>
-        <Email/>
-      </LitContainer>
+      <div className="w-[80%] m-auto my-6">
+        <LitContainer>
+          <Email/>
+        </LitContainer>
+      </div>
     </div>
   )
 }
