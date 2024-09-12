@@ -45,7 +45,7 @@ export async function encrypt(payload: any) {
       console.log(error)
     }
     if(valid){
-      redirect("/")
+      redirect("/admin/dashboard")
     }
 }
 
