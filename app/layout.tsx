@@ -24,6 +24,9 @@ export const metadata: Metadata = {
   },
   openGraph: {
     description: "Web Design Services in Madison Ohio."
+  },
+  twitter:{
+    card: "summary_large_image"
   }
   //description: "Software Development",
 };

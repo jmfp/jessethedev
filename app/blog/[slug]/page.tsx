@@ -9,14 +9,29 @@ import { Button } from '@/components/ui/button';
 import { redirect } from 'next/navigation';
 import { Metadata } from 'next';
 import { LitContainer } from '@/app/components/container/container';
+import { cache } from 'react'
 
 hljs.registerLanguage('typescript', typescript);
 
 export const revalidate = 30
 const prisma = new PrismaClient()
 
-export const metadata : Metadata = {
+//caching post fetch so that the data is only retrieved once
+const getPost = cache(fetchPosts)
 
+export async function generateMetadata({params}: {params: {slug: string}}): Promise<Metadata>{
+  const post = await getPost(params.slug)
+  return{
+    title: post.title,
+    description: post.description,
+    openGraph: {
+      images: [
+        {
+          url: post.image
+        }
+      ]
+    }
+  }
 }
 
 //fetch posts from mongodb
@@ -33,7 +48,7 @@ async function fetchPosts(slug: string){
 
 export default async function Article({params}:{params: {slug: string}}){
     //const data: article = await getData(params.slug)
-    const post = await fetchPosts(params.slug)
+    const post = await getPost(params.slug)
     let content = parse(post.content)
     return(
       <div className='display: flex h-full flex-col overflow-hidden'>
