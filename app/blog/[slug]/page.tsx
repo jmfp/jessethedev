@@ -10,6 +10,7 @@ import { redirect } from 'next/navigation';
 import { Metadata } from 'next';
 import { LitContainer } from '@/app/components/container/container';
 import { cache } from 'react'
+import { getAllPosts } from '@/actions/actions';
 
 hljs.registerLanguage('typescript', typescript);
 
@@ -19,11 +20,19 @@ const prisma = new PrismaClient()
 //caching post fetch so that the data is only retrieved once
 const getPost = cache(fetchPosts)
 
+//static params for load time
+//export async function generateStaticParams() : Promise<any>{
+//  const posts = await getAllPosts()
+//  console.log(`posts are ${posts}`)
+//  posts.map(({id}) => id)
+//}
+
 export async function generateMetadata({params}: {params: {slug: string}}): Promise<Metadata>{
   const post = await getPost(params.slug)
   return{
     title: post.title,
     description: post.description,
+    keywords:[post.title],
     openGraph: {
       images: [
         {
