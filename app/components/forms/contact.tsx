@@ -1,4 +1,4 @@
-import { sendEmail } from "@/actions/actions"
+import { sendEmail } from "@/actions/emailactions"
 import { Button } from "@/components/ui/button"
 
 export default function Email() {
