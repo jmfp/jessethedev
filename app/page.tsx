@@ -3,6 +3,8 @@ import Email from "./components/forms/contact";
 import { ParallaxHero, ParallaxHeroContainer, ParallaxVideo } from "./components/images/image";
 import { LitContainer, LitGrid } from "./components/container/container";
 import { serviceInfo } from "./lib/interface";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function Services() {
   let grid : serviceInfo[] = []
@@ -37,7 +39,10 @@ export default function Services() {
         <LitContainer>
           <div className="flex flex-col items-center text-center m-auto p-12">
             <h2 className="text-primary text-3xl mb-6">Read My Blog</h2>
-            <p>My blog contains some of the knowledge I've used to build web applications and websites that scale. Also, it's pretty fun 😊</p>
+            <p>My blog contains some of the knowledge I've used to build web applications and websites that scale. If you would like to see more about my process or the technology I use, or you would just like to know more about me, that's the place to go. Also, it's pretty fun 😊</p>
+            <Link href={"/blog"} className="my-4 w-[45%]">
+              <Button>Blog</Button>
+            </Link>
           </div>
         </LitContainer>
         </div>
@@ -64,6 +69,15 @@ export default function Services() {
           <p className="m-auto text-3xl">
             {"I have over 10 years of experience in the field with a Bachelors degree in computer science. I like to take a laid back approach to communication, and a focused approach to work. "}
           </p>
+          <LitContainer>
+            <div className="flex flex-col items-center text-center m-auto p-12">
+              <h2 className="text-primary text-3xl mb-6">Read My Blog</h2>
+              <p>My blog contains some of the knowledge I've used to build web applications and websites that scale. If you would like to see more about my process or the technology I use, or you would just like to know more about me, that's the place to go. Also, it's pretty fun 😊</p>
+              <Link href={"/blog"} className="my-4 w-[45%]">
+                <Button>Blog</Button>
+              </Link>
+            </div>
+          </LitContainer>
         </div>
         <Image src={"/images/social.webp"}
           width={400}

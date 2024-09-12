@@ -8,9 +8,13 @@ export async function LitGrid(props: {_info: serviceInfo[]}){
             {props._info?.map((info: serviceInfo, idx: number) => (
                 <div key={idx} className="transform border w-96 h-64 rounded-sm border-primary animate-in hover:animate-bounce">
                     <Link href={info.destination}>
-                    <div className="m-auto h-full">
-                        <p className="m-auto text-primary">{info.title}</p>
-                        <p>{info.description}</p>
+                    <div className="flex relative bg-slate-900 w-full h-full rounded-lg m-auto">
+                        <div className={`${"after:blur-md after:absolute after:size-full after:z-[-2] after:top-[50%] after:left-[50%] after:transform after:translate-x-[-50%] after:translate-y-[-50%] after:p-6 after:bg-gradient-conic-spin from-primary via-yellow-600 to-primary after:saturate-200 after:animate-pulse"} ${"rgbGradient"}`}>
+                        </div>
+                        <div className="flex flex-col p-6">
+                            <h2 className="text-2xl text-primary my-4">{info.title}</h2>
+                            <p>{info.description}</p>
+                        </div>
                     </div>
                     </Link>
                 </div>
@@ -23,7 +27,7 @@ export async function LitGrid(props: {_info: serviceInfo[]}){
 export async function LitContainer(props: {children?: React.ReactNode}){
     return(
         <div className="flex relative bg-slate-900 w-full h-full rounded-lg m-auto">
-            <div className={`${"after:blur-md after:absolute after:size-full after:z-[-2] after:top-[50%] after:left-[50%] after:transform after:translate-x-[-50%] after:translate-y-[-50%] after:p-6 after:bg-gradient-conic-spin from-primary via-green-600 to-primary after:saturate-200 after:animate-pulse"} ${"rgbGradient"}`}>
+            <div className={`${"after:blur-md after:absolute after:size-full after:z-[-2] after:top-[50%] after:left-[50%] after:transform after:translate-x-[-50%] after:translate-y-[-50%] after:p-6 after:bg-gradient-conic-spin from-primary via-yellow-600 to-primary after:saturate-200 after:animate-pulse"} ${"rgbGradient"}`}>
             </div>
             {props.children}
         </div>
