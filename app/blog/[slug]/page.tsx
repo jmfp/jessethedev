@@ -36,7 +36,7 @@ export default async function Article({params}:{params: {slug: string}}){
     const post = await fetchPosts(params.slug)
     let content = parse(post.content)
     return(
-      <div className='display: flex h-full flex-col'>
+      <div className='display: flex h-full flex-col overflow-hidden'>
         <ParallaxHero image={post.image} height={50}/>
         <div className='p-1'>
         <LitContainer>
