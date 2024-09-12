@@ -8,6 +8,7 @@ import MarkdownArea from '@/app/components/markdown/MarkdownArea';
 import { Button } from '@/components/ui/button';
 import { redirect } from 'next/navigation';
 import { Metadata } from 'next';
+import { LitContainer } from '@/app/components/container/container';
 
 hljs.registerLanguage('typescript', typescript);
 
@@ -37,6 +38,8 @@ export default async function Article({params}:{params: {slug: string}}){
     return(
       <div className='display: flex h-full flex-col'>
         <ParallaxHero image={post.image} height={50}/>
+        <div className='p-1'>
+        <LitContainer>
           <div className="w-[100vw] content-center flex-auto p-10 prose-h1:text-violet-500">
           <h1 className="text-3xl font-extrabold text-center">{post.title}</h1>
             <div className="mt-24 prose m-[auto] prose-violet prose-xl dark:prose-invert prose-h2:text-violet-500 prose-li:color-violet-500">
@@ -60,6 +63,8 @@ export default async function Article({params}:{params: {slug: string}}){
                 <Button type='submit'>Next</Button>
               </form>
             }
+        </div>
+        </LitContainer>
         </div>
       </div>
     )
