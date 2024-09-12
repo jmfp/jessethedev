@@ -39,6 +39,9 @@ export async function generateMetadata({params}: {params: {slug: string}}): Prom
           url: post.image
         }
       ]
+    },
+    twitter:{
+      card: "summary_large_image"
     }
   }
 }
