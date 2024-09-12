@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Email from "./components/forms/contact";
 import { ParallaxHero, ParallaxHeroContainer, ParallaxVideo } from "./components/images/image";
-import { LitGrid } from "./components/container/container";
+import { LitContainer, LitGrid } from "./components/container/container";
 import { serviceInfo } from "./lib/interface";
 
 export default function Services() {
@@ -34,6 +34,7 @@ export default function Services() {
         <ParallaxHero image="/images/wheel.webp" height={40}/>
         <div className="m-16 text-center text-3xl">
         <p>{"I like to overdeliver and produce results that both parties can be proud of. With a focus on solving clients individual needs for each project, I enjoy creating a platform that will make you proud to share your content, services or products."}</p>
+        <LitContainer/>
         </div>
         
         <ParallaxHero image="/images/solo.webp" height={40}/>
@@ -79,7 +80,9 @@ export default function Services() {
           alt="socialsite" className="m-auto scale-150 overflow-hidden"/>
         <h2 className="m-auto text-primary text-3xl">Contact Me</h2>
       </div>
+      <LitContainer>
         <Email/>
+      </LitContainer>
     </div>
   )
 }

@@ -29,7 +29,6 @@ export async function sendEmail(formData: any){
         const lastName = formData.get("lastName")
         const message = formData.get("message")
         const email = formData.get("email")
-        console.log(name)
         const transport = nodemailer.createTransport({
             service: 'gmail',
             auth: {
@@ -49,16 +48,14 @@ export async function sendEmail(formData: any){
             transport.sendMail(mailOptions, function (err) {
               if (!err) {
                 resolve('Email sent');
+                redirect("/thankyou")
               } else {
                 reject(err.message);
               }
             });
           });
-
         revalidatePath("/")
-      
         await sendMailPromise()
-        redirect("/")
     } catch (error: any) {
         console.log(error)
     }

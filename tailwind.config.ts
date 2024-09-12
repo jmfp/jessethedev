@@ -1,3 +1,4 @@
+import { transform } from "next/dist/build/swc"
 import type { Config } from "tailwindcss"
 
 const config = {
@@ -69,13 +70,22 @@ const config = {
         },
         "float-y":{
           "0%, 100%": {transform: "translate(-26px)"}
+        },
+        "spin-gradient": {
+          "0%, 100%": {transform: "rotate(360deg)"}
         }
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "bounce-slow": "bounce 16s linear infinite"
+        "bounce-slow": "bounce 16s linear infinite",
+        "gradient-spin": "spin-gradient 3s linear infinite"
       },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'gradient-conic': 'conic-gradient(var(--tw-gradient-stops))',
+        'gradient-conic-spin': 'conic-gradient(from var(--gradient-angle), var(--tw-gradient-stops))',
+      }
     },
   },
   plugins: [require("tailwindcss-animate"), require('@tailwindcss/typography')],

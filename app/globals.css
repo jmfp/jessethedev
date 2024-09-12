@@ -25,6 +25,16 @@
     --input: 220 13% 91%;
     --ring: 262.1 83.3% 57.8%;
     --radius: 0.5rem;
+    --gradient-angle: 0deg;
+  }
+
+  .rgbGradient {
+    animation: spin-gradient 4s linear infinite;
+  }
+
+  @keyframes spin-gradient{
+    from{--gradient-angle: 0deg;}
+    to{--gradient-angle: 360deg;}
   }
 
   .dark {

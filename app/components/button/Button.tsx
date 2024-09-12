@@ -1,7 +1,7 @@
 'use client'
 import {BsCopy} from 'react-icons/bs'
 
-export default async function Copybutton({id}:{id:string}) {
+export async function Copybutton({id}:{id:string}) {
     const handleCopy = async () =>{
         const text = document.getElementById(id)?.textContent
         try {
@@ -15,4 +15,12 @@ export default async function Copybutton({id}:{id:string}) {
         <BsCopy/>
     </div>
   )
+}
+
+export async function RGBButton(props: {text:string}) {
+    return(
+        <div className='hover:cursor-pointer bg-primary m-auto h-24 w-24 p4 rounded-2xl'>
+            {props.text}
+        </div>
+    )
 }

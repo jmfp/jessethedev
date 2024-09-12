@@ -1,5 +1,6 @@
 
 import { ReactNode } from "react";
+import { RGBButton } from "../button/Button";
 
 {/*export default function ParallaxImage(props: {image: string, alt:string, width:number, height:number, style:string, text:string}){
     return(
@@ -33,7 +34,8 @@ export async function ParallaxHero(props:{image: string, height: number, text?: 
     )
 }
 
-export async function ParallaxHeroContainer(props:{image: string, height: number, text?: string, children?: ReactNode, style?: string}) {
+export async function ParallaxHeroContainer(props:{image: string, height: number, text?: string, children?: ReactNode, style?: string, buttonText?: string}) {
+    
     return(
         <div className={`h-full`}>
             <div
