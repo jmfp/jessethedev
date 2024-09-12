@@ -39,7 +39,7 @@ export default function Services() {
         <LitContainer>
           <div className="flex flex-col items-center text-center m-auto p-12">
             <h2 className="text-primary text-3xl mb-6">Read My Blog</h2>
-            <p>My blog contains some of the knowledge I've used to build web applications and websites that scale. If you would like to see more about my process or the technology I use, or you would just like to know more about me, that's the place to go. Also, it's pretty fun 😊</p>
+            <p>{"My blog contains some of the knowledge I've used to build web applications and websites that scale. If you would like to see more about my process or the technology I use, or you would just like to know more about me, that's the place to go. Also, it's pretty fun 😊"}</p>
             <Link href={"/blog"} className="my-4 w-[45%]">
               <Button>Blog</Button>
             </Link>
