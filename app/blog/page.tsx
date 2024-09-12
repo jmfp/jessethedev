@@ -26,8 +26,8 @@ export default async function Home() {
       <div className='display: flex w-[100%] justify-center mb-14'>
         <div className='grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 mt-5 gap-5 content-center'>
           {posts.length ? posts.map((post: post, idx: number) =>(
-            <LitContainer>
-                <Card key={idx} className='m-[auto] max-w-[400px] max-h-[550px]'>
+            <LitContainer key={idx}>
+                <Card className='m-[auto] max-w-[400px] max-h-[550px]'>
                   <Image 
                     src={post.image} 
                     alt={post.slug} 
