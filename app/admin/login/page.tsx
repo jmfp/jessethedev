@@ -5,7 +5,6 @@ import { redirect } from "next/navigation"
 
 export default async function Login(){
     const session = await getSession()
-    console.log(session)
     return(
         <div className="flex flex-col m-auto items-center size-full rounded-sm ">
             <div className="w-[90%] h-[90%]">

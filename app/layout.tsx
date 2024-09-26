@@ -4,6 +4,7 @@ import "./globals.css";
 import Navigation from "./components/navigation/navbar/Navbar"
 import {ThemeProvider} from './components/theme-provider'
 import { Providers } from "../app/blog/[slug]/providers";
+//import { Toaster } from "@/components/ui/toaster";
 
 import { GoogleAnalytics } from '@next/third-parties/google'
 
@@ -49,6 +50,7 @@ export default function RootLayout({
         >
           <Providers>
           <Navigation/>
+          {/*<Toaster/>*/}
           {children}
           <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" async></script>
           <script async>hljs.highlightAll();</script>

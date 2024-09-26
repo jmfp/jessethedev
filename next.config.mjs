@@ -1,4 +1,5 @@
 /** @type {import('next').NextConfig} */
+import { PrismaPlugin } from '@prisma/nextjs-monorepo-workaround-plugin'
 import withVideos from "next-videos";
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -11,6 +12,13 @@ const nextConfig = {
     images:{
         domains: ["images.unsplash.com", "cdn.sanity.io", "jefrydco.id"]
     },
+    webpack: (config, { isServer }) => {
+        if (isServer) {
+          config.plugins = [...config.plugins, new PrismaPlugin()]
+        }
+    
+        return config
+      },
     reactStrictMode: false,
 };
 

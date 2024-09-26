@@ -7,6 +7,6 @@ export default function robot(): MetadataRoute.Robots {
         allow: '/',
         disallow: '/admin'
     },
-    sitemap: 'https://www.jessethedev.com/sitemap.xml'
+    sitemap: 'https://www.jessethedev.com/server-sitemap.xml'
   }
 }

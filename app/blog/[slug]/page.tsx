@@ -48,15 +48,9 @@ export async function generateMetadata({params}: {params: {slug: string}}): Prom
 
 //fetch posts from mongodb
 async function fetchPosts(slug: string){
-  //const res = await fetch(`${process.env.API_URL}/api/posts?slug=${slug}`)
-  //const posts = await res.json()
   const posts = await prisma.post.findMany({where: {slug: slug}})
   return (posts[0])
 }
-
-//useEffect(() => {
-//  hljs.initHighlighting();
-//}, []);
 
 export default async function Article({params}:{params: {slug: string}}){
     //const data: article = await getData(params.slug)

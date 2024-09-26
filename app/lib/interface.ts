@@ -1,3 +1,4 @@
+
 export interface blogCard{
     title: string,
     smallDescription: string,
@@ -25,4 +26,12 @@ export interface serviceInfo{
     icon: string,
     description: string,
     destination: string
+}
+
+export interface course{
+    title: string,
+    description: string,
+    image: File,
+    price?: number,
+    categoryId: string
 }

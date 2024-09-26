@@ -26,7 +26,7 @@ export default function Services() {
             <Image src={"/images/header-img.svg"} alt="Web Design Madison Ohio" width={400} height={400} className="animate-bounce-slow"/>
           </ParallaxHeroContainer>
         <div className="m-16">
-        <h1 className="m-auto text-primary text-3xl">Web Design Services In Madison and Northeast Ohio</h1>
+        <h1 className="m-auto text-primary text-3xl">Web Design Madison and Northeast Ohio</h1>
           <p className="m-auto text-3xl">
             {"I have over 10 years of experience in the field with a Bachelors degree in computer science. I like to take a laid back approach to communication, and a focused approach to work. "}
           </p>
@@ -65,7 +65,7 @@ export default function Services() {
           />
         </div>
         <div className="m-16">
-        <h1 className="m-auto text-primary text-3xl">Web Design Services In Madison and Northeast Ohio</h1>
+        <h1 className="m-auto text-primary text-3xl">Web Design Madison and Northeast Ohio</h1>
           <p className="m-auto text-3xl">
             {"I have over 10 years of experience in the field with a Bachelors degree in computer science. I like to take a laid back approach to communication, and a focused approach to work. "}
           </p>

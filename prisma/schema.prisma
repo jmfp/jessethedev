@@ -38,4 +38,29 @@ model User {
   password    String
   username    String    @unique
   subscribed  Boolean   @default(false)
+  admin       Boolean   @default(false)
+}
+
+model Course {
+  id          String    @id @default(auto()) @map("_id") @db.ObjectId
+  title       String    
+  description String
+  image       String?    
+  price       Float?
+  isPublished Boolean   @default(false)
+  categoryId  String?
+  //attachments Attachment[]
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+model Attachment{
+  id          String    @id @default(auto()) @map("_id") @db.ObjectId
+  name        String
+  url         String
+  courseId    String    //id of the couorse the attachment beloongs to
+  //course      Course    @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  //@@index([courseId])
 }
