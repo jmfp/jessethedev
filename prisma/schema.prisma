@@ -77,7 +77,18 @@ model Question{
   id          String    @id @default(auto()) @map("_id") @db.ObjectId
   chapterId   String    //id of course chapter belongs to
   question    String    //questions and answers
+  testcase    String[]  @default([])//potential test cases to pass for code questions
+  expected    String?   //expected output for test cases in code questions
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  //@@index([courseId])
+}
+
+model Answer{
+  id          String    @id @default(auto()) @map("_id") @db.ObjectId
+  questionId  String    //questions and answers
   answer      String
+  correct     Boolean   @default(false)
   testcase    String[]  @default([])//potential test cases to pass for code questions
   expected    String?   //expected output for test cases in code questions
   createdAt   DateTime  @default(now())

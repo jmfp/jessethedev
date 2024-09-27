@@ -55,6 +55,15 @@ export const getChapters = async(id: string) => {
     return chapters
 }
 
+//get chapter by id
+export const getChapter = async(id: string) => {
+    const chapter = await prisma.chapter.findFirst({where: {
+        id
+    }
+    })
+    return chapter
+}
+
 export const addQuestion = async(formData: any) => {
     const id = formData.get("chapterId")
 
@@ -62,10 +71,17 @@ export const addQuestion = async(formData: any) => {
         data:{
             chapterId: id,
             question: formData.get("question"),
-            answer: formData.get("answer")
+            //answers: formData.get("answers")
         }
     })
     revalidatePath(`/admin/courses/chapter/edit/${formData.get("chapterId")}`)
+}
+//get answers from question id
+export const getAnswers = async(id: string) => {
+    const answers = await prisma.answer.findMany({where: {
+        questionId: id
+    }})
+    return answers
 }
 //get questions from chapter id
 export const getQuestions = async(id: string) => {
@@ -75,11 +91,30 @@ export const getQuestions = async(id: string) => {
     return questions
 }
 
+export const getQuestion = async(id: string) => {
+    const question = await prisma.question.findFirst({where: {
+        id
+    }})
+    return question
+}
+
 export const deleteQuestion = async(id: string, chapterId: string) => {
     await prisma.question.delete({where: {
         id
     }})
     revalidatePath(`/admin/courses/chapter/edit/${chapterId}`)
+}
+
+export const addAnswer = async(formData: any) => {
+    const id = formData.get("questionId")
+
+    const newQuestion = await prisma.answer.create({
+        data:{
+            questionId: id,
+            answer: formData.get("answer")
+        }
+    })
+    revalidatePath(`/admin/courses/chapter/edit/${formData.get("chapterId")}`)
 }
 
 export const addBlog = async (formData: any) => {

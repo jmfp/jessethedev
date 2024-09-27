@@ -170,7 +170,17 @@ exports.Prisma.QuestionScalarFieldEnum = {
   id: 'id',
   chapterId: 'chapterId',
   question: 'question',
+  testcase: 'testcase',
+  expected: 'expected',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.AnswerScalarFieldEnum = {
+  id: 'id',
+  questionId: 'questionId',
   answer: 'answer',
+  correct: 'correct',
   testcase: 'testcase',
   expected: 'expected',
   createdAt: 'createdAt',
@@ -194,7 +204,8 @@ exports.Prisma.ModelName = {
   Course: 'Course',
   Attachment: 'Attachment',
   Chapter: 'Chapter',
-  Question: 'Question'
+  Question: 'Question',
+  Answer: 'Answer'
 };
 
 /**

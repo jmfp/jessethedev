@@ -20,7 +20,7 @@ export default async function EditCourse({params}:{params: {id: string}}) {
                   <form action={async () =>{
                     'use server'
                     redirect(`/admin/courses/chapter/edit/${chapter.id}`)
-                  }}>
+                  }} className="flex-col gap-2">
                     <Button type="submit">Edit</Button>
                   </form>
                   <form action={async () =>{
