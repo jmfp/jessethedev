@@ -45,7 +45,7 @@ export default async function EditCourse({params}:{params: {id: string}}) {
         <div className='display: flex flex-col'>
         <div className="display: flex">
             <div className="border rounded-lg border-primary w-[35%] h-[90%] m-auto">
-                <p className='m-auto'>Imagine you have a face with another face on it's face</p>
+                <p className='m-auto'>Imagine you have a face with another face on its face</p>
             </div>
             <div className="border rounded-lg border-primary w-[35%] m-auto overflow-hidden">
                 <Playground 
