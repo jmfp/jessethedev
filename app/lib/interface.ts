@@ -35,3 +35,7 @@ export interface course{
     price?: number,
     categoryId: string
 }
+
+export interface playground{
+    defaultCode: string
+}

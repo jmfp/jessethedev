@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import Image from "next/image"
 import { deleteBlog, getAllCourses, getAllPosts } from "@/actions/actions"
+import { redirect } from "next/navigation"
 
 export default async function Dashboard(){
     
@@ -59,6 +60,7 @@ export default async function Dashboard(){
                                 <form action={async () =>{
                                     'use server'
                                     //edit the course
+                                    await redirect(`/admin/courses/edit/${course.id}`)
                                     //await deleteBlog(post.slug)
                                     //await deleteBlog
                                 }}>

@@ -157,6 +157,26 @@ exports.Prisma.AttachmentScalarFieldEnum = {
   updatedAt: 'updatedAt'
 };
 
+exports.Prisma.ChapterScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  courseId: 'courseId',
+  questions: 'questions',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.QuestionScalarFieldEnum = {
+  id: 'id',
+  chapterId: 'chapterId',
+  question: 'question',
+  answer: 'answer',
+  testcase: 'testcase',
+  expected: 'expected',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -172,7 +192,9 @@ exports.Prisma.ModelName = {
   Post: 'Post',
   User: 'User',
   Course: 'Course',
-  Attachment: 'Attachment'
+  Attachment: 'Attachment',
+  Chapter: 'Chapter',
+  Question: 'Question'
 };
 
 /**

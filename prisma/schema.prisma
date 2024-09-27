@@ -49,7 +49,6 @@ model Course {
   price       Float?
   isPublished Boolean   @default(false)
   categoryId  String?
-  //attachments Attachment[]
   createdAt   DateTime  @default(now())
   updatedAt   DateTime  @updatedAt
 }
@@ -59,7 +58,28 @@ model Attachment{
   name        String
   url         String
   courseId    String    //id of the couorse the attachment beloongs to
-  //course      Course    @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  //@@index([courseId])
+}
+
+model Chapter{
+  id          String    @id @default(auto()) @map("_id") @db.ObjectId
+  name        String
+  courseId    String    //id of course chapter belongs to
+  questions   String[]  @default([])    //questions and answers
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  //@@index([courseId])
+}
+
+model Question{
+  id          String    @id @default(auto()) @map("_id") @db.ObjectId
+  chapterId   String    //id of course chapter belongs to
+  question    String    //questions and answers
+  answer      String
+  testcase    String[]  @default([])//potential test cases to pass for code questions
+  expected    String?   //expected output for test cases in code questions
   createdAt   DateTime  @default(now())
   updatedAt   DateTime  @updatedAt
   //@@index([courseId])

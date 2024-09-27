@@ -28,7 +28,59 @@ export async function validateUser(user: any){
     return false
 }
 
+export const addChapter = async(formData: any) => {
+    const courseId = formData.get("courseId")
+    const name = formData.get("name")
 
+    const newChapter = await prisma.chapter.create({
+        data:{
+            name,
+            courseId
+        }
+    })
+    revalidatePath(`/admin/courses/edit/${courseId}`)
+}
+
+export const deleteChapter = async(id: string, courseId: string) => {
+    await prisma.chapter.delete({where: {
+        id
+    }})
+    revalidatePath(`/admin/courses/edit/${courseId}`)
+}
+//get chapters from a course id
+export const getChapters = async(id: string) => {
+    const chapters = await prisma.chapter.findMany({where: {
+        courseId: id
+    }})
+    return chapters
+}
+
+export const addQuestion = async(formData: any) => {
+    const id = formData.get("chapterId")
+
+    const newQuestion = await prisma.question.create({
+        data:{
+            chapterId: id,
+            question: formData.get("question"),
+            answer: formData.get("answer")
+        }
+    })
+    revalidatePath(`/admin/courses/chapter/edit/${formData.get("chapterId")}`)
+}
+//get questions from chapter id
+export const getQuestions = async(id: string) => {
+    const questions = await prisma.question.findMany({where: {
+        chapterId: id
+    }})
+    return questions
+}
+
+export const deleteQuestion = async(id: string, chapterId: string) => {
+    await prisma.question.delete({where: {
+        id
+    }})
+    revalidatePath(`/admin/courses/chapter/edit/${chapterId}`)
+}
 
 export const addBlog = async (formData: any) => {
     const title = formData["title"]
@@ -84,4 +136,11 @@ export const addCourse = async(course: any) => {
 export const getAllCourses = async() => {
     revalidatePath('/admin/dashboard')
     return await prisma.course.findMany({})
+}
+
+export const getCourse = async(id: string) => {
+    revalidatePath('/admin/dashboard')
+    return await prisma.course.findFirst({where: {
+        id
+    }})
 }
