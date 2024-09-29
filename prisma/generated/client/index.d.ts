@@ -5095,6 +5095,7 @@ export namespace Prisma {
   export type ChapterMinAggregateOutputType = {
     id: string | null
     name: string | null
+    info: string | null
     courseId: string | null
     createdAt: Date | null
     updatedAt: Date | null
@@ -5103,6 +5104,7 @@ export namespace Prisma {
   export type ChapterMaxAggregateOutputType = {
     id: string | null
     name: string | null
+    info: string | null
     courseId: string | null
     createdAt: Date | null
     updatedAt: Date | null
@@ -5111,6 +5113,7 @@ export namespace Prisma {
   export type ChapterCountAggregateOutputType = {
     id: number
     name: number
+    info: number
     courseId: number
     questions: number
     createdAt: number
@@ -5122,6 +5125,7 @@ export namespace Prisma {
   export type ChapterMinAggregateInputType = {
     id?: true
     name?: true
+    info?: true
     courseId?: true
     createdAt?: true
     updatedAt?: true
@@ -5130,6 +5134,7 @@ export namespace Prisma {
   export type ChapterMaxAggregateInputType = {
     id?: true
     name?: true
+    info?: true
     courseId?: true
     createdAt?: true
     updatedAt?: true
@@ -5138,6 +5143,7 @@ export namespace Prisma {
   export type ChapterCountAggregateInputType = {
     id?: true
     name?: true
+    info?: true
     courseId?: true
     questions?: true
     createdAt?: true
@@ -5220,6 +5226,7 @@ export namespace Prisma {
   export type ChapterGroupByOutputType = {
     id: string
     name: string
+    info: string
     courseId: string
     questions: string[]
     createdAt: Date
@@ -5246,6 +5253,7 @@ export namespace Prisma {
   export type ChapterSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     name?: boolean
+    info?: boolean
     courseId?: boolean
     questions?: boolean
     createdAt?: boolean
@@ -5256,6 +5264,7 @@ export namespace Prisma {
   export type ChapterSelectScalar = {
     id?: boolean
     name?: boolean
+    info?: boolean
     courseId?: boolean
     questions?: boolean
     createdAt?: boolean
@@ -5269,6 +5278,7 @@ export namespace Prisma {
     scalars: $Extensions.GetPayloadResult<{
       id: string
       name: string
+      info: string
       courseId: string
       questions: string[]
       createdAt: Date
@@ -5667,6 +5677,7 @@ export namespace Prisma {
   interface ChapterFieldRefs {
     readonly id: FieldRef<"Chapter", 'String'>
     readonly name: FieldRef<"Chapter", 'String'>
+    readonly info: FieldRef<"Chapter", 'String'>
     readonly courseId: FieldRef<"Chapter", 'String'>
     readonly questions: FieldRef<"Chapter", 'String[]'>
     readonly createdAt: FieldRef<"Chapter", 'DateTime'>
@@ -7846,6 +7857,7 @@ export namespace Prisma {
   export const ChapterScalarFieldEnum: {
     id: 'id',
     name: 'name',
+    info: 'info',
     courseId: 'courseId',
     questions: 'questions',
     createdAt: 'createdAt',
@@ -8250,6 +8262,7 @@ export namespace Prisma {
     NOT?: ChapterWhereInput | ChapterWhereInput[]
     id?: StringFilter<"Chapter"> | string
     name?: StringFilter<"Chapter"> | string
+    info?: StringFilter<"Chapter"> | string
     courseId?: StringFilter<"Chapter"> | string
     questions?: StringNullableListFilter<"Chapter">
     createdAt?: DateTimeFilter<"Chapter"> | Date | string
@@ -8259,6 +8272,7 @@ export namespace Prisma {
   export type ChapterOrderByWithRelationInput = {
     id?: SortOrder
     name?: SortOrder
+    info?: SortOrder
     courseId?: SortOrder
     questions?: SortOrder
     createdAt?: SortOrder
@@ -8271,6 +8285,7 @@ export namespace Prisma {
     OR?: ChapterWhereInput[]
     NOT?: ChapterWhereInput | ChapterWhereInput[]
     name?: StringFilter<"Chapter"> | string
+    info?: StringFilter<"Chapter"> | string
     courseId?: StringFilter<"Chapter"> | string
     questions?: StringNullableListFilter<"Chapter">
     createdAt?: DateTimeFilter<"Chapter"> | Date | string
@@ -8280,6 +8295,7 @@ export namespace Prisma {
   export type ChapterOrderByWithAggregationInput = {
     id?: SortOrder
     name?: SortOrder
+    info?: SortOrder
     courseId?: SortOrder
     questions?: SortOrder
     createdAt?: SortOrder
@@ -8295,6 +8311,7 @@ export namespace Prisma {
     NOT?: ChapterScalarWhereWithAggregatesInput | ChapterScalarWhereWithAggregatesInput[]
     id?: StringWithAggregatesFilter<"Chapter"> | string
     name?: StringWithAggregatesFilter<"Chapter"> | string
+    info?: StringWithAggregatesFilter<"Chapter"> | string
     courseId?: StringWithAggregatesFilter<"Chapter"> | string
     questions?: StringNullableListFilter<"Chapter">
     createdAt?: DateTimeWithAggregatesFilter<"Chapter"> | Date | string
@@ -8732,6 +8749,7 @@ export namespace Prisma {
   export type ChapterCreateInput = {
     id?: string
     name: string
+    info: string
     courseId: string
     questions?: ChapterCreatequestionsInput | string[]
     createdAt?: Date | string
@@ -8741,6 +8759,7 @@ export namespace Prisma {
   export type ChapterUncheckedCreateInput = {
     id?: string
     name: string
+    info: string
     courseId: string
     questions?: ChapterCreatequestionsInput | string[]
     createdAt?: Date | string
@@ -8749,6 +8768,7 @@ export namespace Prisma {
 
   export type ChapterUpdateInput = {
     name?: StringFieldUpdateOperationsInput | string
+    info?: StringFieldUpdateOperationsInput | string
     courseId?: StringFieldUpdateOperationsInput | string
     questions?: ChapterUpdatequestionsInput | string[]
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -8757,6 +8777,7 @@ export namespace Prisma {
 
   export type ChapterUncheckedUpdateInput = {
     name?: StringFieldUpdateOperationsInput | string
+    info?: StringFieldUpdateOperationsInput | string
     courseId?: StringFieldUpdateOperationsInput | string
     questions?: ChapterUpdatequestionsInput | string[]
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -8766,6 +8787,7 @@ export namespace Prisma {
   export type ChapterCreateManyInput = {
     id?: string
     name: string
+    info: string
     courseId: string
     questions?: ChapterCreatequestionsInput | string[]
     createdAt?: Date | string
@@ -8774,6 +8796,7 @@ export namespace Prisma {
 
   export type ChapterUpdateManyMutationInput = {
     name?: StringFieldUpdateOperationsInput | string
+    info?: StringFieldUpdateOperationsInput | string
     courseId?: StringFieldUpdateOperationsInput | string
     questions?: ChapterUpdatequestionsInput | string[]
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -8782,6 +8805,7 @@ export namespace Prisma {
 
   export type ChapterUncheckedUpdateManyInput = {
     name?: StringFieldUpdateOperationsInput | string
+    info?: StringFieldUpdateOperationsInput | string
     courseId?: StringFieldUpdateOperationsInput | string
     questions?: ChapterUpdatequestionsInput | string[]
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -9216,6 +9240,7 @@ export namespace Prisma {
   export type ChapterCountOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
+    info?: SortOrder
     courseId?: SortOrder
     questions?: SortOrder
     createdAt?: SortOrder
@@ -9225,6 +9250,7 @@ export namespace Prisma {
   export type ChapterMaxOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
+    info?: SortOrder
     courseId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
@@ -9233,6 +9259,7 @@ export namespace Prisma {
   export type ChapterMinOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
+    info?: SortOrder
     courseId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder

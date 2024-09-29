@@ -8,7 +8,7 @@ import { PiTerminalThin } from "react-icons/pi"
 import {Copybutton} from "../button/Button"
 import { icons } from "@/app/lib/languageicons"
 
-export default function MarkdownArea({content, children, className}:{content:string, children?:any, className?:string}) {
+export default function MarkdownArea({content, children, className}:{content:any, children?:any, className?:string}) {
   return (
     <Markdown 
     rehypePlugins={[rehypeHighlight]}

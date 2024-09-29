@@ -31,11 +31,13 @@ export async function validateUser(user: any){
 export const addChapter = async(formData: any) => {
     const courseId = formData.get("courseId")
     const name = formData.get("name")
+    const info = formData.get("info")
 
     const newChapter = await prisma.chapter.create({
         data:{
             name,
-            courseId
+            courseId,
+            info
         }
     })
     revalidatePath(`/admin/courses/edit/${courseId}`)

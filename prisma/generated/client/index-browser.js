@@ -160,6 +160,7 @@ exports.Prisma.AttachmentScalarFieldEnum = {
 exports.Prisma.ChapterScalarFieldEnum = {
   id: 'id',
   name: 'name',
+  info: 'info',
   courseId: 'courseId',
   questions: 'questions',
   createdAt: 'createdAt',

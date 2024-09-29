@@ -24,17 +24,17 @@ export default async function CourseQuestion({params} : {params: {id: string, ch
                 console.log(formData)
             }} className="flex flex-col w-full">
                 <div className='flex w-full'>
-                <div className="m-auto display: flex grid-cols-2 gap-4 my-6">
-                    
-                {answers.map((answer: any, idx: number) => (
-                    <LitContainer key={idx}>
-                        <div className='size-64 flex h-full p-2 flex-col-reverse items-center text-center'>
-                          <Checkbox id={`answer${idx}`} name={`answer${idx}`} className="m-auto"/>
-                          <Label htmlFor={`answer${idx}`} className="m-auto size-48">{answer.answer}</Label>
-                        </div>
-                    </LitContainer>
-                ))}
-                </div>
+                    <div className="m-auto display: flex grid-cols-2 gap-4 my-6 ">
+
+                        {answers.map((answer: any, idx: number) => (
+                            <LitContainer key={idx}>
+                                <div className='size-64 flex h-full p-2 flex-col-reverse items-center text-center'>
+                                  <Checkbox id={`answer${idx}`} name={`answer${idx}`} className="m-auto"/>
+                                  <Label htmlFor={`answer${idx}`} className="m-auto size-48">{answer.answer}</Label>
+                                </div>
+                            </LitContainer>
+                        ))}
+                    </div>
                 </div>
                 <Button type='submit' className="m-auto my-6">Answer</Button>
             </form>
