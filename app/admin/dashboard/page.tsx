@@ -27,15 +27,17 @@ export default async function Dashboard(){
                                 className="h-[100px] w-[100px] rounded-lg object-cover"
                             />
                             <p>{post.title}</p>
-                            <div className="display: flex gap-4 m-auto">
-                                <form action={async () =>{
-                                    'use server'
-                                    await deleteBlog(post.slug)
-                                    //await deleteBlog
-                                }}>
-                                    <Button type='submit'>Delete</Button>
-                                </form>
-                                <Button>Edit</Button>
+                            <div className="mx-6">
+                                <div className="display: flex gap-4 m-auto">
+                                    <form action={async () =>{
+                                        'use server'
+                                        await deleteBlog(post.slug)
+                                        //await deleteBlog
+                                    }}>
+                                        <Button type='submit'>Delete</Button>
+                                    </form>
+                                    <Button>Edit</Button>
+                                </div>
                             </div>
                         </div>
                     ))
@@ -72,11 +74,11 @@ export default async function Dashboard(){
                     ))
                 }
             </div>
-            <div className="my-2 flex-row w-[80%] border border-primary">
-                <Button asChild>
+            <div className="my-2 flex flex-row w-[80%] p-4 gap-2">
+                <Button asChild className="m-auto">
                     <Link href="/admin/posts/new">New Post</Link>
                 </Button>
-                <Button asChild>
+                <Button asChild className="m-auto">
                     <Link href="/admin/courses/new">New Course</Link>
                 </Button>
             </div>

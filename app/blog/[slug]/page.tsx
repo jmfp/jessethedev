@@ -11,6 +11,7 @@ import { Metadata } from 'next';
 import { LitContainer } from '@/app/components/container/container';
 import { cache } from 'react'
 import { getAllPosts } from '@/actions/actions';
+import { NewsletterBottomAd } from '@/app/components/newsletter/newsletter';
 
 hljs.registerLanguage('typescript', typescript);
 
@@ -86,6 +87,11 @@ export default async function Article({params}:{params: {slug: string}}){
             }
         </div>
         </LitContainer>
+        <div className='my-6'>
+          <LitContainer>
+            <NewsletterBottomAd offer="Free SEO Checklist"/>
+          </LitContainer>
+        </div>
         </div>
       </div>
     )
