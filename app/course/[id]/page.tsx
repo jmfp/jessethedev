@@ -12,7 +12,7 @@ export default async function CoursePage({params} : {params: {id: string}}){
                 {chapters?.length === 0 ? null : 
                     chapters.map((chapter: any, idx: number) => (
 
-                    <div className="hover:bg-slate-700 border border-primary m-auto h-36 rounded-lg w-[80%] flex items-center justify-between">
+                    <div key={idx} className="hover:bg-slate-700 border border-primary m-auto h-36 rounded-lg w-[80%] flex items-center justify-between">
                         <span className="text-primary text-3xl text-center mx-4">{chapter.name}</span>
                         <form action={async() => {
                             'use server'
