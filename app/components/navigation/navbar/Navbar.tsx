@@ -9,8 +9,8 @@ import { PiGithubLogoThin, PiLinkedinLogoThin } from "react-icons/pi";
 const NavBar = () =>{
     return(
     <>
-    <div className="w-full h-20 lg:sticky top-0 z-50">
-      <div className="container mx-auto px-4 h-full">
+    <div className="w-full flex lg:h-24 max-sm:h-0 lg:sticky top-0 z-50 bg-slate-900 bg-opacity-20 backdrop-filter backdrop-blur-md overflow-hidden">
+      <div className="container m-auto px-4 h-full">
         <div className="flex justify-between items-center h-full">
           <Logo/>
           <SocialLinks/>

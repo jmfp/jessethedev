@@ -120,26 +120,37 @@ export const addAnswer = async(formData: any) => {
 }
 
 export const addBlog = async (formData: any) => {
-    const title = formData["title"]
-    const image = formData["image"]
-    const slug = formData["slug"]
-    const description = formData["description"]
-    const content = formData["content"]
-    const category = formData["category"]
+    const title = formData.get("title")
+    const image = formData.get("image")
+    const slug = formData.get("slug")
+    const description = formData.get("description")
+    const content = formData.get("content")
+    const category = formData.get("category")
     const new_blog = await prisma.post.create({
         data:{
-            image: image,
+            image: await toBase64(image),
             title: title,
             slug: slug,
             description: description,
             content: content, 
-            category: category
+            category
         }
     })
 
     //revalidate cache for server action
     revalidatePath('/admin/posts/new')
     redirect('/')
+}
+
+export const addCategory = async(name: any) =>{
+    const cat = name.get("newcat")
+    const newCat = await prisma.category.create({data:{name: cat}})
+    console.log(newCat)
+    revalidatePath("/admin/posts/new")
+}
+
+export const getCategories = async(id?: string) =>{
+    return await prisma.category.findMany({where:{id}})
 }
 
 export const deleteBlog = async(slug: any) =>{

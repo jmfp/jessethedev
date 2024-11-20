@@ -188,6 +188,11 @@ exports.Prisma.AnswerScalarFieldEnum = {
   updatedAt: 'updatedAt'
 };
 
+exports.Prisma.CategoryScalarFieldEnum = {
+  id: 'id',
+  name: 'name'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -206,7 +211,8 @@ exports.Prisma.ModelName = {
   Attachment: 'Attachment',
   Chapter: 'Chapter',
   Question: 'Question',
-  Answer: 'Answer'
+  Answer: 'Answer',
+  Category: 'Category'
 };
 
 /**

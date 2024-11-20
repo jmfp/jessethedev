@@ -96,3 +96,8 @@ model Answer{
   updatedAt   DateTime  @updatedAt
   //@@index([courseId])
 }
+
+model Category{
+  id          String    @id @default(auto()) @map("_id") @db.ObjectId
+  name        String
+}
