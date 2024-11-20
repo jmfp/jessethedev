@@ -22,7 +22,7 @@ export default function Services() {
   return (
     <div className="display: flex flex-col text-center overflow-hidden">
       <div className="max-sm:hidden">
-          <ParallaxHeroContainer image="/images/hero.webp" height={40} text="Hi I'm Jesse And I Design Websites.">
+          <ParallaxHeroContainer image="/images/hero.webp" height={40} text="Hi I'm Jesse And I Build Websites.">
             <Image src={"/images/header-img.svg"} alt="Web Design Madison Ohio" width={400} height={400} className="animate-bounce-slow"/>
           </ParallaxHeroContainer>
         <div className="m-16">
