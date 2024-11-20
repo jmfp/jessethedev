@@ -58,7 +58,6 @@ export default function NewCourse() {
       formData.append("image", values.image)
       formData.append("price", values.price.toString())
       formData.append("categoryId", values.categoryId)
-      console.log(formData)
       await addCourse(formData);
     } catch (error: any) {
       console.log(`Error when submitting form - ${error}`)

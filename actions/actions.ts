@@ -143,7 +143,8 @@ export const addBlog = async (formData: any) => {
 }
 
 export const deleteBlog = async(slug: any) =>{
-    prisma.post.delete({where: {slug: slug}})
+    await prisma.post.delete({where: {slug: slug}})
+    revalidatePath('/admin/dashboard')
 }
 
 export const getAllPosts = async() => {
